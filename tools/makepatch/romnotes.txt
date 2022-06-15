@@ -1,0 +1,81 @@
+==== Main.py > main 
+
+- patch_enemizer
+- patch_rom 
+- apply_rom_settings 
+
+
+
+==== rom.py > patch_rom 
+
+args: world rom player team enemized is_mystery=False 
+
+- calc bow hack location
+- patch items 
+    - pots
+    - drops
+    - keys/items
+    - crystals/pendants, music
+- pottery hammerpeg fix
+- pottery item data
+- pottery swamp drain fixes 
+- entrance/exit/holes 
+- inverted shuffled dark sanc 
+- DR options   
+    - "prevent" mixed dungeon travel fixes 
+- HC dungeon items fix 
+- bunny at spawn patches 
+- doors 
+- non-ER lobby shuffle inverted CT/GT swap
+- dungeon portals ?
+- exit fixes 
+- shops 
+- misc drop/pottery fixes 
+- credits 
+- medallions 
+- set open/std/inverted 
+- uncle 
+- light cones 
+- difficulty fixes 
+- progressive items  
+- RNG seed 
+- prize
+    - packs, dig, tree pull, crab, stun, fish, bonk etc
+- item substitutions table 
+- pyramid/waterfall fairy stuff
+- upgrade fairy remove statues 
+- quick smithy item 
+- swordless 
+- timed modes 
+- treasure hunt 
+- assorted fixes  
+- starting equipment
+- misc things
+    - inverted, portals
+    - hammer aga barrier
+    - capacity upgrades 
+    - escape assist 
+- goal settings 
+- HC std fixes 
+- keys textboxes enable/disable 
+- map/compass stuff 
+- keys menu stuff 
+- saha/bomb shop prize reveal 
+- retro settings 
+- dig game RNG 
+- more assorted fixes 
+- remove shield from uncle 
+- escape refill stuff 
+- permanent SP drain 
+- powder patch 
+- smith in multi-entrance caves 
+- hera basement item 
+- TR doors fix 
+- room data 
+- strings 
+- SRAM 
+- remote items ?
+- rom name 
+- player names 
+- filescreen code 
+
