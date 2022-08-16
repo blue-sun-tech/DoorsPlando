@@ -1,0 +1,17 @@
+makes a bps patch with a transform file. 
+usage:
+> makepatch.exe [transform file] [output file] ([log file])
+
+transform file syntax:
+# comment 
+inc foo.tf   (inserts given transform file)
+sb addr mask (sets bits at addr using mask)
+cb addr mask (clears bits at addr using mask) 
+s8 addr val (set byte)
+s16 addr val (set word) 
+ss addr len val (write string) 
+t names tags command  (tags = "tag1,tag2") (creates tf of single command)
+tstart names tags 
+    command/tf 
+tfend  (create a transform with multiple commands or other transforms)
+encrypt ... (for race roms, not implemented yet)

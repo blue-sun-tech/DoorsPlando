@@ -2,6 +2,7 @@
 
 - patch_enemizer
 - patch_rom 
+- patch_race_rom
 - apply_rom_settings 
 
 
@@ -9,6 +10,8 @@
 ==== rom.py > patch_rom 
 
 args: world rom player team enemized is_mystery=False 
+
+>>> list 
 
 - calc bow hack location
 - patch items 
@@ -33,6 +36,120 @@ args: world rom player team enemized is_mystery=False
 - misc drop/pottery fixes 
 - credits 
 - medallions 
+- set open/std/inverted 
+- uncle 
+- light cones 
+- difficulty fixes 
+- progressive items  
+- RNG seed 
+- prize
+    - packs, dig, tree pull, crab, stun, fish, bonk etc
+- item substitutions table 
+- pyramid/waterfall fairy stuff
+- upgrade fairy remove statues 
+- quick smithy item 
+- swordless 
+- timed modes 
+- treasure hunt 
+- assorted fixes  
+- starting equipment
+- misc things
+    - inverted, portals
+    - hammer aga barrier
+    - capacity upgrades 
+    - escape assist 
+- goal settings 
+- HC std fixes 
+- keys textboxes enable/disable 
+- map/compass stuff 
+- keys menu stuff 
+- saha/bomb shop prize reveal 
+- retro settings 
+- dig game RNG 
+- more assorted fixes 
+- remove shield from uncle 
+- escape refill stuff 
+- permanent SP drain 
+- powder patch 
+- smith in multi-entrance caves 
+- hera basement item 
+- TR doors fix 
+- room data 
+- strings 
+- SRAM 
+- remote items ?
+- rom name 
+- player names 
+- filescreen code 
+
+>> notes 
+
+- calc bow hack location
+- patch items 
+    -pots: 0x142800 + pot_mw_index*2
+    -drops: snes_to_pc(location.address) 
+    -item: location.player_address, location.address
+    -crystal: location.address[]
+    -music: music_addresses
+- gt music 
+    -if map shffle: 0x155c9
+- pottery hammerpeg fix 
+    - snes_to_pc(0x1F8375), snes_to_pc(0x2A8000)
+- pottery item data
+    -world.pot_contents[player].write_pot_data_to_rom(rom, colorize_pots)
+- pottery swamp drain fixes 
+    -0x142A53,0x142A54
+- entrance/exit/holes 
+    -exit: 0x15B8C + offset, 0x15BDB + 2 * offset,
+            0x15C79 + 2 * offset,0x15D17 + 2 * offset
+            + various exit specific fixes 
+    -hole: exit.addresses 
+    -door table..? : 0xDBB73 + exit.addresses
+- inverted shuffled dark sanc 
+    - patch_shuffled_dark_sanc(world, rom, player)
+- DR options   
+    - "prevent" mixed dungeon travel fixes 
+    - pod hammer: 0xfa607, [0x2d, 0x79, 0x69, 0x14, 0x99, 0x5d]
+    - pod arena: 0xfa573, [0xd4, 0xb2, 0x22, 0xd4, 0xce, 0x22, 0xd9, 0xae, 0x69]
+    - mire bk: 0xfb1fc, [0xc8, 0x9d, 0x69, 0xb4, 0xac, 0x5d]
+- HC dungeon items fix 
+    - 0x151f1, 0x15270, 0x1597b
+    - update_compasses(...)
+- bunny at spawn patches 
+    - sanc: 0x13fff2, [0x12, 0x00]
+    - links: 0x13fff0, [0x04, 0x01]
+    - oldman: 0x13fff4, [0xe4, 0x00]
+- doors 
+    - chest counts: 0x138002, 0x13f030+offset, 0x13f020+offset
+            0x13f080+offset, 0x13f090+offset, 0x13f0a0+offset
+    - 0x13f040+offset*2
+    - sanc_portal keys?: 0x159a6, 0x13ff00
+    - palette: 0x13f200+room.index
+    - basic: 0x138002
+    - doors: door.getAddress()
+    - paired doors: paired_door.address_a(world, player),
+        paired_door.address_b(world, player)
+    - boss icon: 0x13f000+dungeon_id
+    - mystery: 0x138004, 0x138005
+    - inv town portal..?: 0x138006
+- non-ER lobby shuffle inverted CT/GT swap (no write)
+- dungeon portals ?
+    - various vars 
+- exit fixes 
+    - sw, pod, tr, gt : 0x15DB5 + ...
+- shops 
+    -write_custom_shops(...)
+- misc drop/pottery fixes 
+    - standingitemson: 0x142A50
+    - multiClientFlags: 0x142A51
+    - StandingItemCounterMask: 0x142A55
+    - cucco kill room fix: snes_to_pc(0x0DB457)
+    - pottery: snes_to_pc(0x28AA56)
+- credits 
+    -dynamic:0x187010
+    - 
+- medallions 
+    -various addr,
 - set open/std/inverted 
 - uncle 
 - light cones 
